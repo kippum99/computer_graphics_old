@@ -4,22 +4,19 @@
 # This is a template Makefile for the assignment. Edit it however you find
 # convenient.
 ###############################################################################
-CC = g++
-FLAGS = -g
-
 # The following line is a relative directory reference that assumes the Eigen
 # folder--which your program will depend on--is located one directory above the
 # directory that contains this Makefile.
 INCLUDE = -I../
-SOURCES = *.h *.cpp
+CXXFLAGS = -Wall -Werror -Wpedantic -Werror=sign-compare -std=c++14
+SOURCES = *.cpp
 
-EXENAME = my_prog
+EXENAME = transformation_parser
 
 all: $(SOURCES)
-	$(CC) $(FLAGS) -o $(EXENAME) $(INCLUDE) $(SOURCES)
+	$(CXX) $(CXXFLAGS) -o $(EXENAME) $(INCLUDE) $(SOURCES)
 
 clean:
 	rm -f *.o $(EXENAME)
 
 .PHONY: all clean
-
