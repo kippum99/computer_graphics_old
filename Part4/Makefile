@@ -1,7 +1,7 @@
 CXXFLAGS = -std=c++17
-SOURCES = object.o transformation.o data_loader.o
+SOURCES = ppm_circle.cpp
 
-EXENAME = data_loader
+EXENAME = ppm_circle
 
 all: $(SOURCES)
 	$(CXX) $(CXXFLAGS) -o $(EXENAME) $(INCLUDE) $^
